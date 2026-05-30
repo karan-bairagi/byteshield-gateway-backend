@@ -2,6 +2,9 @@
 
 > A Security-Focused API Gateway built with Django REST Framework, Redis, JWT Authentication, and Real-Time Traffic Analytics.
 
+[![Live Frontend Dashboard](https://img.shields.io/badge/Live-Dashboard-blue?style=for-the-badge&logo=vercel)](https://byteshield-dashboard-frontend.vercel.app/)
+[![Backend API Live](https://img.shields.io/badge/Render-Live_API-E57373?style=for-the-badge&logo=render&logoColor=white)](https://byteshield-gateway-backend.onrender.com)
+
 ![Python](https://img.shields.io/badge/Python-3.13+-blue?logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-6.0+-green?logo=django&logoColor=white)
 ![Django REST Framework](https://img.shields.io/badge/DRF-3.15+-red?logo=django&logoColor=white)
@@ -151,7 +154,7 @@ Auth  Cache   Database
 
 | Category | Technology |
 |-----------|------------|
-| Language | Python 3.10+ |
+| Language | Python 3.13+ |
 | Framework | Django |
 | API Framework | Django REST Framework |
 | Authentication | SimpleJWT |
@@ -216,7 +219,7 @@ ByteShield/
 |----------|----------|
 | GET | `/api/v1/user/profile/` |
 | GET | `/api/v1/dashboard/metrics/` |
-| PATCH | `/api/v1/dashboard/charts/` |
+| GET | `/api/v1/dashboard/charts/` |
 
 ---
 
@@ -301,7 +304,7 @@ REDIS_URL=your_redis_cloud_or_local_url
 ## Clone Repository
 
 ```bash
-git clone [https://github.com/karan-bairagi/byteshield-gateway-backend.git](https://github.com/karan-bairagi/byteshield-gateway-backend.git)
+git clone https://github.com/karan-bairagi/byteshield-gateway-backend
 cd byteshield-gateway-backend
 ```
 
@@ -399,6 +402,13 @@ Enterprise     → Custom
 - API Security Engineering & Middleware Pipelines
 - Django REST Framework Deployment
 - Redis Memory Layer Caching
+
+---
+---
+
+## 🚀 Project Component Links
+- **🖥️ Frontend Repository:** [https://github.com/karan-bairagi/byteshield-dashboard-frontend](https://github.com/karan-bairagi/byteshield-dashboard-frontend)
+- **🎨 Live Frontend Dashboard:** [https://byteshield-dashboard-frontend.vercel.app/](https://byteshield-dashboard-frontend.vercel.app/)
 
 ---
 
