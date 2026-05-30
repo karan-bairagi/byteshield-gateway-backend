@@ -163,7 +163,7 @@ Client Application
 | API Framework | Django REST Framework |
 | Authentication | SimpleJWT |
 | Cache | Redis |
-| Database | SQLite / PostgreSQL |
+| Database | PostgreSQL (Supabase)|
 | Hashing | SHA3-256 |
 | Deployment | Render |
 | Version Control | Git & GitHub |
@@ -173,7 +173,7 @@ Client Application
 # 📂 Project Structure
 
 ```text
-ByteShieldBackend/
+ByteShield/
 │
 ├── api/
 │   ├── middleware.py
@@ -182,7 +182,7 @@ ByteShieldBackend/
 │   ├── views.py
 │   └── urls.py
 │
-├── core/
+├── ByteShield/
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
@@ -294,9 +294,8 @@ Metrics instantly become available on dashboard endpoints.
 ## Clone Repository
 
 ```bash
-git clone https://github.com/karan-bairagi/byteshield-gateway-backend.git
-
-cd byteshield-backend
+git clone [https://github.com/karan-bairagi/byteshield-gateway-backend.git](https://github.com/karan-bairagi/byteshield-gateway-backend.git)
+cd byteshield-gateway-backend
 ```
 
 ## Create Virtual Environment
