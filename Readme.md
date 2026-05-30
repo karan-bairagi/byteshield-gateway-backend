@@ -134,22 +134,15 @@ Example:
 # 🏗️ System Architecture
 
 ```text
-Client Application
+Frontend Dashboard
         │
         ▼
- ┌─────────────────┐
- │ ByteShield API  │
- │ Gateway Layer   │
- └─────────────────┘
+ByteShield Gateway
         │
-        ├── JWT Validation
-        ├── API Key Verification
-        ├── Rate Limiting
-        ├── IP Filtering
-        └── Analytics Logging
-        │
-        ▼
- Protected Services
+ ┌──────┼──────┐
+ ▼      ▼      ▼
+JWT   Redis   PostgreSQL
+Auth  Cache   Database
 ```
 
 ---
@@ -229,9 +222,9 @@ ByteShield/
 
 ## 🛡️ Gateway Verification
 
-| Method | Endpoint |
+| Method | Endpoint | Required Header
 |----------|----------|
-| POST | `/api/v1/shield/verify/` |
+| POST | `/api/v1/shield/verify/` | X-ByteShield-Key: bsk_live_xxxx
 
 Requires:
 
@@ -288,6 +281,20 @@ Checks:
 Metrics instantly become available on dashboard endpoints.
 
 ---
+## 🔒 Environment Variables Configuration
+
+Before running the server, create a `.env` file in the root directory and add the following configuration variables (refer to `.env.example` if available):
+
+```text
+SECRET_KEY=your_django_secret_key
+DEBUG=False
+DB_NAME=your_supabase_db_name
+DB_USER=your_supabase_db_user
+DB_PASSWORD=your_supabase_db_password
+DB_HOST=your_supabase_db_host
+DB_PORT=5432
+REDIS_URL=your_redis_cloud_or_local_url
+```
 
 # 📦 Local Installation
 
