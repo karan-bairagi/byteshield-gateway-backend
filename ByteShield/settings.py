@@ -22,9 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
-
-ALLOWED_HOSTS = []
+DEBUG =False
+ALLOWED_HOSTS = [
+    'byteshield-gateway-backend.onrender.com',
+    '127.0.0.1',   
+    'localhost',
+]
 
 
 # Application definition
@@ -79,11 +82,11 @@ WSGI_APPLICATION = 'ByteShield.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('NAME'),
-        'USER': os.environ.get('USER'),
-        'PASSWORD':os.environ.get('PASSWORD'),
-        'HOST':os.environ.get('HOST'),
-        'PORT':os.environ.get('PORT')
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD':os.environ.get('DB_PASSWORD'),
+        'HOST':os.environ.get('DB_HOST'),
+        'PORT':os.environ.get('DB_PORT')
     }
 }
 
@@ -117,14 +120,20 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
-
-STATIC_URL = 'static/'
-STATICFILES_DIRS=[BASE_DIR,'staticfiles']
-CORS_ALLOW_ALL_ORIGINS = True 
-CORS_ALLOW_HEADERS = '*'
-
-
-
-
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [] 
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5500",
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://byteshield-frontend.vercel.app",
+]
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
