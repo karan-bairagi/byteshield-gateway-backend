@@ -397,7 +397,7 @@ Enterprise     → Custom
 
 ## 🌐 Connect With Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/karan-bairagi)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/karan-bairagi/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/karan-bairagi)
 [![Render Live API](https://img.shields.io/badge/Render-Live_API-E57373?style=for-the-badge&logo=render&logoColor=white)](https://byteshield-gateway-backend.onrender.com)
 
