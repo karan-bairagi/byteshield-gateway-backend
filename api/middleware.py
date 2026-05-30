@@ -16,22 +16,19 @@ class SecurityByteshield:
             endpoint.startswith('/api/v1/dashboard/') or
             endpoint.startswith('/api/v1/home/') or
             endpoint.startswith('/api/v1/api-key') or
-            endpoint.startswith('/api/v1/api_key/') or
-            endpoint.startswith('/admin/')):
+            endpoint.startswith('/api/v1/api_key/')):
             return self.get_response(request)
-
-
-        start_time=time.time()
-        user_ip=request.META.get('REMOTE_ADDR')
-        if  IPBlacklist.objects.filter(ip_address=user_ip).exists():
-            response_time=int((time.time() - start_time)*1000)
-            return JsonResponse({
-                'detail':'Your IP address has been banned from ByteShield.'
-            },status=status.HTTP_403_FORBIDDEN)
-        
-
-
-
+        start_time = time.time()
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            user_ip = x_forwarded_for.split(',')[0].strip()
+        else:
+            user_ip = request.META.get('REMOTE_ADDR')
+            if IPBlacklist.objects.filter(ip_address=user_ip).exists():
+                response_time = int((time.time() - start_time) * 1000)
+                return JsonResponse({
+                    'detail': 'Your IP address has been banned from ByteShield.'
+                }, status=status.HTTP_403_FORBIDDEN)
         api_key=request.headers.get('X-ByteShield-Key')
         if not api_key:
             response_time=int((time.time() - start_time)*1000)
