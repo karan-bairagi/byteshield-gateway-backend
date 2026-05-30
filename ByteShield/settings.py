@@ -127,7 +127,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://byteshield-dashboard-frontend.vercel.app/",
+    "https://byteshield-dashboard-frontend.vercel.app",
 ]
 CORS_ALLOW_METHODS = [
     "DELETE",
@@ -136,4 +136,9 @@ CORS_ALLOW_METHODS = [
     "PATCH",
     "POST",
     "PUT",
+]
+from corsheaders.defaults import default_headers
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "x-byteshield-key",
+    "X-ByteShield-Key",
 ]
