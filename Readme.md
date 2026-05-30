@@ -225,12 +225,31 @@ ByteShield/
 
 ## 🛡️ Gateway Verification
 
-| Method | Endpoint | Required Header
-|----------|----------|
-| POST | `/api/v1/shield/verify/` | X-ByteShield-Key: bsk_live_xxxx
+To protect your external services, make a server-side or client-side HTTP request to the ByteShield gateway endpoint.
+
+### 🌐 How to integrate in your Website (JavaScript Example)
+
+```javascript
+// Call this endpoint from your external application to verify client traffic
+fetch("[https://byteshield-gateway-backend.onrender.com/api/v1/shield/verify/](https://byteshield-gateway-backend.onrender.com/api/v1/shield/verify/)", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "X-ByteShield-Key": "YOUR_GENERATED_API_KEY" // Replace with your key from ByteShield Dashboard
+    }
+})
+.then(response => {
+    if (response.status === 200) {
+        console.log("Access Granted by ByteShield!");
+    } else if (response.status === 429) {
+        console.warn("Rate Limit Exceeded! Slow down.");
+    } else {
+        console.error("Access Denied or Invalid API Key.");
+    }
+})
+.catch(err => console.error("Gateway Connection Error:", err));```
 
 Requires:
-
 ```http
 X-ByteShield-Key: bsk_live_xxxxxxxxx
 ```
