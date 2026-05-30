@@ -247,7 +247,7 @@ fetch("[https://byteshield-gateway-backend.onrender.com/api/v1/shield/verify/](h
         console.error("Access Denied or Invalid API Key.");
     }
 })
-.catch(err => console.error("Gateway Connection Error:", err));```
+.catch(err => console.error("Gateway Connection Error:", err));
 
 Requires:
 ```http
